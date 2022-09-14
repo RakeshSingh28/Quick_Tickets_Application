@@ -1,27 +1,24 @@
 <template>
-  <v-container fluid grid-list-md class="pa-1">
-    <v-card height="40px" width="1300px" color="black">
+  <v-container fluid grid-list-md>
+    <v-card height="40px" width="1400px" color="black" class="mt-1">
       <v-row>
         <v-spacer />
-        <h3 class="white--text">Sign Up Form</h3>
+        <h3 class="white--text mt-1">Sign Up Form</h3>
         <v-spacer />
       </v-row>
     </v-card>
-
     <div class="bground">
       <v-row justify="center">
-        <v-card height="450px" width="400px" class="mt-10">
-          <div style="border-bottom: 1px solid black">
-            <v-row>
+        <v-card height="450px" width="400px" class="dialog-height">
+            <v-row class="title-row">
               <v-spacer />
               <h4>Sign Up</h4>
               <v-spacer />
             </v-row>
-          </div>
+          <div class="border-col">
           <v-col
             cols="12"
-            class="pa-0 px-2 py-2"
-            style="border-bottom: 1px solid black"
+            class="pb-0"
           >
             <v-text-field
               :key="reset"
@@ -63,8 +60,9 @@
               clearable
             ></v-text-field>
           </v-col>
+          </div>
           <v-card-actions>
-            <v-row class="align d-flex align-center">
+            <v-row class="align d-flex align-center pt-3">
               <v-spacer />
               <v-btn
                 @click="clearAll"
@@ -187,7 +185,7 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   /* background-color: grey; */
   background-size: cover;
-  min-height: 82vh;
+  min-height: 93vh;
 }
 .align {
   margin-right: 0px;
@@ -199,5 +197,16 @@ export default {
   bottom: 1px;
   margin-top: -18px;
   padding-left: 4px;
+}
+.dialog-height {
+  margin-top: 100px;
+}
+.border-col {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  margin-top: 20px;
+}
+.title-row {
+  margin-top: 13px;
 }
 </style>
