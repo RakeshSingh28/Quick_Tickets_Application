@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-md>
+  <v-container fluid grid-list-md class="pa-0 pt-2">
     <v-card height="40px" width="1400px" color="black" class="mt-1">
       <v-row>
         <v-spacer />
@@ -89,7 +89,7 @@
                   <v-img
                     width="20"
                     height="20"
-                    src="images\icons\success.svg"
+                    src="../assets/logo.svg"
                   ></v-img>
                   <span class="snackbar-style">{{ text }}</span>
                 </div>
@@ -145,13 +145,13 @@ export default {
       passwordRule: [
         (v) => !!v || "Password is required",
         (v) =>
-          (v && v.length <= 15) || "Password must be less than 15 characters",
+          (v && v.length<= 15 && v.length>= 8) || "Password must be between 8 to 15 characters",
       ],
       cnfrmpasswordRule: [
         (v) => !!v || "Confirm Password is required",
         (v) => v == this.password || "Password doesn't match",
         (v) =>
-          (v && v.length <= 15) || "Password must be less than 15 characters",
+          (v && v.length<= 15 && v.length>= 8) || "Password must be between 8 to 15 characters",
       ],
       password: "",
       cnfrmpassword: "",
@@ -185,7 +185,7 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   /* background-color: grey; */
   background-size: cover;
-  min-height: 93vh;
+  min-height: 95.5vh;
 }
 .align {
   margin-right: 0px;
