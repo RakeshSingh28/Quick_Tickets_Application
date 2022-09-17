@@ -1,15 +1,15 @@
 <template>
   <v-container fluid grid-list-md class="pa-0 pt-2">
-    <v-card height="40px" width="1400px" color="black" class="mt-1">
+    <v-card height="5%" width="100%" color="black" class="mt-1">
       <v-row>
         <v-spacer />
-        <h3 class="white--text mt-1">Sign Up Form</h3>
+        <h3 class="white--text mt-1">{{companyName}}</h3>
         <v-spacer />
       </v-row>
     </v-card>
     <div class="bground">
       <v-row justify="center">
-        <v-card height="450px" width="400px" class="dialog-height">
+        <v-card height="450px" width="25%" class="dialog-height">
             <v-row class="title-row">
               <v-spacer />
               <h4>Sign Up</h4>
@@ -130,6 +130,12 @@
 export default {
   name: "SignupForm",
   components: {},
+  props: {
+    companyName: {
+      type: String,
+      default: "Company Name"
+    }
+  },
   data() {
     return {
       reset: 0,
