@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <signup-form></signup-form>
+    <signup-form companyName="Sign Up Form"></signup-form>
   </v-app>
 </template>
 
