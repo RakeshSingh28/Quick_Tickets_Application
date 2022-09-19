@@ -209,6 +209,7 @@ export default {
         (v) => v == this.password || "Password doesn't match",
       ],
       countryRule: [(v) => !!v || "Country is required"],
+      //Below is the regex validation of mobile number
       mobnumberRule: [(v) => !!v || "Mobile Number is required", (v) =>
           /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) ||
           "Mobile Number must be valid",],
