@@ -150,13 +150,9 @@
                     this.cnfrmpassword &&
                     this.password == this.cnfrmpassword &&
                     this.password.length < 15 &&
-                    this.email.includes('@') &&
-                    (this.email.includes('.com') ||
-                      this.email.includes('.co') ||
-                      this.email.includes('.org') ||
-                      this.email.includes('.in')) &&
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email) &&
                     this.country &&
-                    this.mobnumber
+                    /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
                   )
                 "
                 width="18%"
