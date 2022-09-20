@@ -79,6 +79,7 @@
                     filled
                     clearable
                     dense
+                    :autofocus="countryCode"
                     :disabled="!countryCode"
                     color="cyan"
                     label="Mobile Number"
@@ -101,7 +102,7 @@
             </v-col>
           </div>
           <v-card-actions>
-            <v-row class="align d-flex align-center pt-3">
+            <v-row class="align d-flex align-center btn-pos">
               <v-spacer />
               <v-btn
                 @click="clearAll"
@@ -116,9 +117,7 @@
                     this.countryCode
                   )
                 "
-                width="20%"
                 color="error"
-                height="30px"
                 class="white--text"
                 >Clear All</v-btn
               >
@@ -159,8 +158,6 @@
                     /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
                   )
                 "
-                width="18%"
-                height="30px"
                 color="primary"
                 class="ml-2"
                 >Sign Up!</v-btn
@@ -298,5 +295,9 @@ export default {
 
 .title-row {
   margin-top: 3%;
+}
+
+.btn-pos {
+  padding-top: 2.5%;
 }
 </style>
