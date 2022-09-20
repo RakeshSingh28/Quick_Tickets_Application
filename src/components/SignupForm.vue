@@ -44,21 +44,23 @@
                 label="Password"
                 :rules="passwordRule"
                 color="cyan"
-                type="password"
+                :type="showPassword ? 'text' : 'password'"
                 filled
-                clearable
                 dense
+                :append-icon="password ? (showPassword ? 'mdi-eye-off' : 'mdi-eye') : ''"
+                @click:append="showPassword = !showPassword"
               ></v-text-field>
               <v-text-field
                 :key="reset"
                 v-model="cnfrmpassword"
-                type="password"
+                :type="showCnfrmPassword ? 'text' : 'password'"
                 :rules="cnfrmpasswordRule"
                 label="Confirm Password"
                 color="cyan"
                 filled
-                clearable
                 dense
+                :append-icon="cnfrmpassword ? (showCnfrmPassword ? 'mdi-eye-off' : 'mdi-eye') : ''"
+                @click:append="showCnfrmPassword = !showCnfrmPassword"
               ></v-text-field>
               <v-row>
                 <v-col cols="5">
@@ -150,7 +152,9 @@
                     this.cnfrmpassword &&
                     this.password == this.cnfrmpassword &&
                     this.password.length < 15 &&
-                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email) &&
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+                      this.email
+                    ) &&
                     this.country &&
                     /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
                   )
@@ -194,21 +198,25 @@ export default {
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
           "E-mail must be valid",
       ],
+      showPassword: false,
       passwordRule: [
         (v) => !!v || "Password is required",
         (v) =>
           (v && v.length <= 15 && v.length >= 8) ||
           "Password must be between 8 to 15 characters",
       ],
+      showCnfrmPassword: false,
       cnfrmpasswordRule: [
         (v) => !!v || "Confirm Password is required",
-        (v) => v == this.password || "Password doesn't match",
+        (v) => v=== this.password || "Password doesn't match"
       ],
       countryRule: [(v) => !!v || "Country is required"],
       //Below is the regex validation of mobile number
-      mobnumberRule: [(v) => !!v || "Mobile Number is required", (v) =>
-          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) ||
-          "Mobile Number must be valid",],
+      mobnumberRule: [
+        (v) => !!v || "Mobile Number is required",
+        (v) =>
+          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) || "Mobile Number must be valid",
+      ],
       password: "",
       cnfrmpassword: "",
       mobnumber: "",
