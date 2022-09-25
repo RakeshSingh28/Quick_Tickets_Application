@@ -9,7 +9,7 @@
     </v-card>
     <div class="bground">
       <v-row justify="center">
-        <v-card height="575px" width="30%" class="dialog-height">
+        <v-card height="580px" width="30%" class="dialog-height">
           <v-row class="title-row">
             <v-spacer />
             <h4>Sign Up</h4>
@@ -114,9 +114,7 @@
                     this.countryCode
                   )
                 "
-                width="20%"
                 color="error"
-                height="30px"
                 class="white--text"
                 >Clear All</v-btn
               >
@@ -150,13 +148,13 @@
                     this.cnfrmpassword &&
                     this.password == this.cnfrmpassword &&
                     this.password.length < 15 &&
-                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email) &&
+                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+                      this.email
+                    ) &&
                     this.country &&
                     /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
                   )
                 "
-                width="18%"
-                height="30px"
                 color="primary"
                 class="ml-2"
                 >Sign Up!</v-btn
@@ -206,9 +204,11 @@ export default {
       ],
       countryRule: [(v) => !!v || "Country is required"],
       //Below is the regex validation of mobile number
-      mobnumberRule: [(v) => !!v || "Mobile Number is required", (v) =>
-          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) ||
-          "Mobile Number must be valid",],
+      mobnumberRule: [
+        (v) => !!v || "Mobile Number is required",
+        (v) =>
+          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) || "Mobile Number must be valid",
+      ],
       password: "",
       cnfrmpassword: "",
       mobnumber: "",
@@ -223,7 +223,28 @@ export default {
   mounted() {
     this.callApi();
   },
+  beforeUpdate() {
+    this.updatingCountry();
+  },
   methods: {
+    updatingCountry() {
+      if (this.countryCode) {
+        let singleData = this.items.find(
+          (value) =>
+            value.alpha3Code + "(+" + value.callingCodes[0] + ")" ==
+            this.countryCode
+        );
+        console.log(singleData);
+        this.country = "";
+        this.country = singleData.name;
+      }
+      if (this.country) {
+        let singleData = this.items.find((value) => value.name == this.country);
+        this.countryCode = "";
+        this.countryCode =
+          singleData.alpha3Code + "(+" + singleData.callingCodes[0] + ")";
+      }
+    },
     async callApi() {
       const allApiData = await axios.get("https://restcountries.com/v2/all");
       this.items = allApiData.data;
