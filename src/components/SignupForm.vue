@@ -9,7 +9,7 @@
     </v-card>
     <div class="bground">
       <v-row justify="center">
-        <v-card height="575px" width="30%" class="dialog-height">
+        <v-card height="580px" width="30%" class="dialog-height">
           <v-row class="title-row">
             <v-spacer />
             <h4>Sign Up</h4>
@@ -228,7 +228,28 @@ export default {
   mounted() {
     this.callApi();
   },
+  beforeUpdate() {
+    this.updatingCountry();
+  },
   methods: {
+    updatingCountry() {
+      if (this.countryCode) {
+        let singleData = this.items.find(
+          (value) =>
+            value.alpha3Code + "(+" + value.callingCodes[0] + ")" ==
+            this.countryCode
+        );
+        console.log(singleData);
+        this.country = "";
+        this.country = singleData.name;
+      }
+      if (this.country) {
+        let singleData = this.items.find((value) => value.name == this.country);
+        this.countryCode = "";
+        this.countryCode =
+          singleData.alpha3Code + "(+" + singleData.callingCodes[0] + ")";
+      }
+    },
     async callApi() {
       const allApiData = await axios.get("https://restcountries.com/v2/all");
       this.items = allApiData.data;
