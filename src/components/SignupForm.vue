@@ -9,7 +9,7 @@
     </v-card>
     <div class="bground">
       <v-row justify="center">
-        <v-card height="580px" width="30%" class="dialog-height">
+        <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" height="575px" width="30%" class="dialog-height">
           <v-row class="title-row">
             <v-spacer />
             <h4>Sign Up</h4>
@@ -79,7 +79,6 @@
                     filled
                     clearable
                     dense
-                    :autofocus="countryCode"
                     :disabled="!countryCode"
                     color="cyan"
                     label="Mobile Number"
@@ -147,6 +146,7 @@
                   !(
                     this.name &&
                     this.email &&
+                    this.mobnumber && this.countryCode &&
                     this.password &&
                     this.cnfrmpassword &&
                     this.password == this.cnfrmpassword &&
@@ -182,6 +182,7 @@ export default {
   },
   data() {
     return {
+      elevate: false,
       items: [],
       item1: [],
       item2: [],
@@ -239,7 +240,6 @@ export default {
             value.alpha3Code + "(+" + value.callingCodes[0] + ")" ==
             this.countryCode
         );
-        console.log(singleData);
         this.country = "";
         this.country = singleData.name;
       }
@@ -253,7 +253,6 @@ export default {
     async callApi() {
       const allApiData = await axios.get("https://restcountries.com/v2/all");
       this.items = allApiData.data;
-      console.log(this.items);
       this.items.forEach((item) => {
         this.item1.push(item.alpha3Code + "(+" + item.callingCodes[0] + ")");
         this.item2.push(item.name);
