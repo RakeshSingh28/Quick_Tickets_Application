@@ -129,7 +129,7 @@
                   <v-img
                     width="20"
                     height="20"
-                    src="../assets/logo.svg"
+                    src="../assets/success.svg"
                   ></v-img>
                   <span class="snackbar-style">{{ text }}</span>
                 </div>
@@ -222,8 +222,6 @@ export default {
       countryCode: "",
       snackbar: false,
       text: "Sign Up Successful!!!",
-      image:
-        "https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
     };
   },
   mounted() {
