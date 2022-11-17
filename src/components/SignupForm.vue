@@ -133,9 +133,27 @@
                   ></v-img>
                   <span class="snackbar-style">{{ text }}</span>
                 </div>
-
                 <template v-slot:action="{ on }">
-                  <v-btn color="error" text v-on="on" @click="snackbar = false">
+                  <v-btn color="success" text v-on="on" @click="snackbar = false">
+                    Close
+                  </v-btn>
+                </template>
+              </v-snackbar>
+              <v-snackbar
+                transition="scale-transition"
+                right
+                v-model="snackbar1"
+              >
+                <div>
+                  <v-img
+                    width="20"
+                    height="20"
+                    src="../assets/Error.svg"
+                  ></v-img>
+                  <span class="snackbar-style">{{ text1 }}</span>
+                </div>
+                <template v-slot:action="{ on }">
+                  <v-btn color="error" text v-on="on" @click="snackbar1 = false">
                     Close
                   </v-btn>
                 </template>
@@ -149,7 +167,6 @@
                     this.mobnumber && this.countryCode &&
                     this.password &&
                     this.cnfrmpassword &&
-                    this.password == this.cnfrmpassword &&
                     this.password.length < 15 &&
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
                       this.email
@@ -206,7 +223,9 @@ export default {
       showCnfrmPassword: false,
       cnfrmpasswordRule: [
         (v) => !!v || "Confirm Password is required",
-        (v) => v=== this.password || "Password doesn't match"
+        (v) =>
+          (v && v.length <= 15 && v.length >= 8) ||
+          "Password must be between 8 to 15 characters",
       ],
       countryRule: [(v) => !!v || "Country is required"],
       //Below is the regex validation of mobile number
@@ -221,7 +240,9 @@ export default {
       country: "",
       countryCode: "",
       snackbar: false,
+      snackbar1: false,
       text: "Sign Up Successful!!!",
+      text1: "Password and Confirm Password doesn't match",
     };
   },
   mounted() {
@@ -267,6 +288,10 @@ export default {
       this.reset++;
     },
     signUp() {
+      if(this.password === this.cnfrmpassword)
+        this.snackbar = true;
+      else
+        this.snackbar1 = true;
       this.name = "";
       this.email = "";
       this.password = "";
@@ -274,7 +299,6 @@ export default {
       this.country = "";
       this.countryCode = "";
       this.mobnumber = "";
-      this.snackbar = true;
       this.reset++;
     },
   },
