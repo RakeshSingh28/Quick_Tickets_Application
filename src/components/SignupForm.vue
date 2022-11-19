@@ -8,7 +8,8 @@
       </v-row>
     </v-card>
     <div class="bground">
-      <v-row justify="center">
+      <v-row>
+        <v-spacer/>
         <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" height="575px" width="30%" class="dialog-height">
           <v-row class="title-row">
             <v-spacer />
@@ -182,6 +183,7 @@
             </v-row>
           </v-card-actions>
         </v-card>
+        <v-spacer/>
       </v-row>
     </div>
   </v-container>
@@ -289,17 +291,19 @@ export default {
     },
     signUp() {
       if(this.password === this.cnfrmpassword)
+      {
         this.snackbar = true;
+        this.name = "";
+        this.email = "";
+        this.password = "";
+        this.cnfrmpassword = "";
+        this.country = "";
+        this.countryCode = "";
+        this.mobnumber = "";
+        this.reset++;
+      }
       else
         this.snackbar1 = true;
-      this.name = "";
-      this.email = "";
-      this.password = "";
-      this.cnfrmpassword = "";
-      this.country = "";
-      this.countryCode = "";
-      this.mobnumber = "";
-      this.reset++;
     },
   },
 };
