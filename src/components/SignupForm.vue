@@ -1,16 +1,16 @@
 <template>
   <v-container fluid grid-list-md class="pa-0 pt-2">
-    <v-card height="5%" width="100%" color="black" class="mt-1">
+    <v-card width="100%" color="black" class="mt-1">
       <v-row>
         <v-spacer />
-        <h3 class="white--text mt-1">{{ companyName }}</h3>
+        <h3 class="white--text">{{ companyName }}</h3>
         <v-spacer />
       </v-row>
     </v-card>
     <div class="bground">
       <v-row>
         <v-spacer/>
-        <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" height="575px" width="30%" class="dialog-height">
+        <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" width="30%" class="dialog-height">
           <v-row class="title-row">
             <v-spacer />
             <h4>Sign Up</h4>
@@ -101,8 +101,8 @@
               ></v-autocomplete>
             </v-col>
           </div>
-          <v-card-actions>
-            <v-row class="align d-flex align-center btn-pos">
+          <v-card-actions class="btn-pos">
+            <v-row class="align d-flex align-center">
               <v-spacer />
               <v-btn
                 @click="clearAll"
@@ -313,7 +313,7 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   /* background-color: grey; */
   background-size: cover;
-  min-height: 96.5vh;
+  min-height: 97.5vh;
 }
 
 .align {
@@ -344,6 +344,8 @@ export default {
 }
 
 .btn-pos {
-  padding-top: 2.5%;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 10px;
 }
 </style>
