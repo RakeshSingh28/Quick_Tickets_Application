@@ -168,7 +168,10 @@
                     this.mobnumber && this.countryCode &&
                     this.password &&
                     this.cnfrmpassword &&
-                    this.password.length < 15 &&
+                    this.password.length <= 15 &&
+                    this.password.length >= 8  &&
+                    this.cnfrmpassword.length <= 15 &&
+                    this.cnfrmpassword.length >= 8  &&
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
                       this.email
                     ) &&
@@ -327,6 +330,7 @@ export default {
   bottom: 1px;
   margin-top: -18px;
   padding-left: 4px;
+  margin-right: 16px;
 }
 
 .dialog-height {
