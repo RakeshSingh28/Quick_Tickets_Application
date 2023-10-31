@@ -1,20 +1,15 @@
 <template>
   <v-container fluid grid-list-md class="pa-0 pt-2">
-    <v-card width="100%" color="black" class="mt-1">
-      <v-row>
-        <v-spacer />
+    <v-card width="100vw" color="black" class="mt-1" style="z-index: 1">
+      <v-row class="d-flex justify-space-around">
         <h3 class="white--text">{{ companyName }}</h3>
-        <v-spacer />
       </v-row>
     </v-card>
     <div class="bground">
-      <v-row>
-        <v-spacer/>
-        <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" width="30%" class="dialog-height">
-          <v-row class="title-row">
-            <v-spacer />
+      <v-row class="d-flex justify-space-around">
+        <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" class="dialog-height">
+          <v-row class="pt-6 d-flex justify-space-around">
             <h4>Sign Up</h4>
-            <v-spacer />
           </v-row>
           <div class="border-col">
             <v-col cols="12" class="pb-0">
@@ -73,6 +68,7 @@
                     :items="item1"
                     :key="reset"
                     v-model="countryCode"
+                    @change="onCountryCodeChange"
                   ></v-autocomplete>
                 </v-col>
                 <v-col cols="7">
@@ -80,6 +76,8 @@
                     filled
                     clearable
                     dense
+                    type="number"
+                    hide-spin-buttons
                     :disabled="!countryCode"
                     color="cyan"
                     label="Mobile Number"
@@ -98,6 +96,7 @@
                 :key="reset"
                 v-model="country"
                 :rules="countryRule"
+                @change="onCountryChange"
               ></v-autocomplete>
             </v-col>
           </div>
@@ -186,7 +185,6 @@
             </v-row>
           </v-card-actions>
         </v-card>
-        <v-spacer/>
       </v-row>
     </div>
   </v-container>
@@ -253,26 +251,21 @@ export default {
   mounted() {
     this.callApi();
   },
-  beforeUpdate() {
-    this.updatingCountry();
-  },
   methods: {
-    updatingCountry() {
-      if (this.countryCode) {
-        let singleData = this.items.find(
-          (value) =>
-            value.alpha3Code + "(+" + value.callingCodes[0] + ")" ==
-            this.countryCode
-        );
-        this.country = "";
-        this.country = singleData.name;
-      }
-      if (this.country) {
-        let singleData = this.items.find((value) => value.name == this.country);
+    onCountryChange(val) {
+        let singleData = this.items.find((value) => value.name == val);
         this.countryCode = "";
         this.countryCode =
           singleData.alpha3Code + "(+" + singleData.callingCodes[0] + ")";
-      }
+    },
+    onCountryCodeChange(val) {
+      let singleData = this.items.find(
+          (value) =>
+            value.alpha3Code + "(+" + value.callingCodes[0] + ")" ==
+            val
+        );
+        this.country = "";
+        this.country = singleData.name;
     },
     async callApi() {
       const allApiData = await axios.get("https://restcountries.com/v2/all");
@@ -314,9 +307,11 @@ export default {
 <style scoped>
 .bground {
   background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-  /* background-color: grey; */
   background-size: cover;
-  min-height: 97.5vh;
+  min-height: calc(100vh - 16px);
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .align {
@@ -334,17 +329,13 @@ export default {
 }
 
 .dialog-height {
-  margin-top: 3%;
+  min-width: 232px !important;
 }
 
 .border-col {
   border-bottom: 1px solid gray;
   border-top: 1px solid gray;
-  margin-top: 5%;
-}
-
-.title-row {
-  margin-top: 3%;
+  margin-top: 20px;
 }
 
 .btn-pos {
