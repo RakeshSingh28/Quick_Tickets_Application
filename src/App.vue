@@ -11,6 +11,9 @@ export default {
 
   components: {
   },
+  mounted() {
+    this.$router.push('/sign-up');
+  },
 
   data: () => ({
   }),
