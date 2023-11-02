@@ -231,7 +231,6 @@ export default {
           "Password must be between 8 to 15 characters",
       ],
       countryRule: [(v) => !!v || "Country is required"],
-      //Below is the regex validation of mobile number
       mobnumberRule: [
         (v) => !!v || "Mobile Number is required",
         (v) =>
@@ -297,6 +296,7 @@ export default {
         this.countryCode = "";
         this.mobnumber = "";
         this.reset++;
+        this.$router.push('/landing-page');
       }
       else
         this.snackbar1 = true;
@@ -330,6 +330,7 @@ export default {
 
 .dialog-height {
   min-width: 232px !important;
+  max-width: 494px !important;
 }
 
 .border-col {
