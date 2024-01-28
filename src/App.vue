@@ -12,7 +12,9 @@ export default {
   components: {
   },
   mounted() {
-    this.$router.push('/sign-up');
+    if (this.$route.path !== '/sign-up') {
+  this.$router.push('/sign-up');
+    }
   },
 
   data: () => ({

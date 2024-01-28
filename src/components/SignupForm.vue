@@ -14,7 +14,7 @@
           <div class="border-col">
             <v-col cols="12" class="pb-0">
               <v-text-field
-                :key="reset"
+                :key="reset+'name'"
                 v-model="name"
                 :rules="nameRule"
                 label="User Name"
@@ -24,7 +24,7 @@
                 dense
               ></v-text-field>
               <v-text-field
-                :key="reset"
+                :key="reset+'email'"
                 v-model="email"
                 :rules="emailRule"
                 label="Email"
@@ -35,7 +35,7 @@
                 dense
               ></v-text-field>
               <v-text-field
-                :key="reset"
+                :key="reset+'pswrd'"
                 v-model="password"
                 label="Password"
                 :rules="passwordRule"
@@ -47,7 +47,7 @@
                 @click:append="showPassword = !showPassword"
               ></v-text-field>
               <v-text-field
-                :key="reset"
+                :key="reset+'cnfrmpswrd'"
                 v-model="cnfrmpassword"
                 :type="showCnfrmPassword ? 'text' : 'password'"
                 :rules="cnfrmpasswordRule"
@@ -66,7 +66,7 @@
                     color="cyan"
                     label="Country Code"
                     :items="item1"
-                    :key="reset"
+                    :key="reset+'countrycode'"
                     v-model="countryCode"
                     @change="onCountryCodeChange"
                   ></v-autocomplete>
@@ -81,7 +81,7 @@
                     :disabled="!countryCode"
                     color="cyan"
                     label="Mobile Number"
-                    :key="reset"
+                    :key="reset+'mob'"
                     v-model="mobnumber"
                     :rules="mobnumberRule"
                   ></v-text-field>
@@ -93,7 +93,7 @@
                 color="cyan"
                 label="Country"
                 :items="item2"
-                :key="reset"
+                :key="reset+'country'"
                 v-model="country"
                 :rules="countryRule"
                 @change="onCountryChange"
@@ -288,15 +288,17 @@ export default {
       if(this.password === this.cnfrmpassword)
       {
         this.snackbar = true;
-        this.name = "";
-        this.email = "";
-        this.password = "";
-        this.cnfrmpassword = "";
-        this.country = "";
-        this.countryCode = "";
-        this.mobnumber = "";
-        this.reset++;
-        this.$router.push('/landing-page');
+        setTimeout(() => {
+          this.name = "";
+          this.email = "";
+          this.password = "";
+          this.cnfrmpassword = "";
+          this.country = "";
+          this.countryCode = "";
+          this.mobnumber = "";
+          this.reset++;
+          this.$router.push('/landing-page');
+        }, 500);
       }
       else
         this.snackbar1 = true;
