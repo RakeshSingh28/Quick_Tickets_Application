@@ -1,6 +1,6 @@
 <template>
   <v-container fluid grid-list-md class="pa-0 pt-2">
-    <v-card width="100vw" color="black" class="mt-1" style="z-index: 1">
+    <v-card width="100vw" color="black" class="mt-1 z-index-1">
       <v-row class="d-flex justify-space-around">
         <h3 class="white--text">{{ companyName }}</h3>
       </v-row>
@@ -106,15 +106,7 @@
               <v-btn
                 @click="clearAll"
                 :disabled="
-                  !(
-                    this.name ||
-                    this.email ||
-                    this.password ||
-                    this.cnfrmpassword ||
-                    this.country ||
-                    this.mobnumber ||
-                    this.countryCode
-                  )
+                  clearAllDisabled
                 "
                 color="error"
                 class="white--text"
@@ -161,22 +153,7 @@
               <v-btn
                 @click="signUp"
                 :disabled="
-                  !(
-                    this.name &&
-                    this.email &&
-                    this.mobnumber && this.countryCode &&
-                    this.password &&
-                    this.cnfrmpassword &&
-                    this.password.length <= 15 &&
-                    this.password.length >= 8  &&
-                    this.cnfrmpassword.length <= 15 &&
-                    this.cnfrmpassword.length >= 8  &&
-                    /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
-                      this.email
-                    ) &&
-                    this.country &&
-                    /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
-                  )
+                  signUpDisabled
                 "
                 color="primary"
                 class="ml-2"
@@ -193,7 +170,6 @@
 import axios from "axios";
 export default {
   name: "SignupForm",
-  components: {},
   props: {
     companyName: {
       type: String,
@@ -249,6 +225,37 @@ export default {
   },
   mounted() {
     this.callApi();
+  },
+  computed: {
+    clearAllDisabled() {
+      return !(
+                this.name ||
+                this.email ||
+                this.password ||
+                this.cnfrmpassword ||
+                this.country ||
+                this.mobnumber ||
+                this.countryCode
+              )
+    },
+    signUpDisabled() {
+      return !(
+        this.name &&
+        this.email &&
+        this.mobnumber && this.countryCode &&
+        this.password &&
+        this.cnfrmpassword &&
+        this.password.length <= 15 &&
+        this.password.length >= 8  &&
+        this.cnfrmpassword.length <= 15 &&
+        this.cnfrmpassword.length >= 8  &&
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+          this.email
+        ) &&
+        this.country &&
+        /^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobnumber)
+      )
+    }
   },
   methods: {
     onCountryChange(val) {
@@ -306,44 +313,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.bground {
-  background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-  background-size: cover;
-  min-height: calc(100vh - 16px);
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-.align {
-  margin-right: 0%;
-}
-
-.snackbar-style {
-  position: relative;
-  display: block;
-  left: 26px;
-  bottom: 1px;
-  margin-top: -18px;
-  padding-left: 4px;
-  margin-right: 16px;
-}
-
-.dialog-height {
-  min-width: 232px !important;
-  max-width: 494px !important;
-}
-
-.border-col {
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;
-  margin-top: 20px;
-}
-
-.btn-pos {
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-right: 10px;
-}
-</style>
+<style scoped src="./SignupForm.css"></style>
