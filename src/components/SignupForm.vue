@@ -9,7 +9,7 @@
       <v-row class="d-flex justify-space-around">
         <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" class="dialog-height">
           <v-row class="pt-6 d-flex justify-space-around">
-            <h4>Sign Up</h4>
+            <h4>{{$t('common.sign.up')}}</h4>
           </v-row>
           <div class="border-col">
             <v-col cols="12" class="pb-0">
@@ -17,7 +17,7 @@
                 :key="reset+'name'"
                 v-model="name"
                 :rules="nameRule"
-                label="User Name"
+                :label="$t('common.user.name')"
                 color="cyan"
                 filled
                 clearable
@@ -27,7 +27,7 @@
                 :key="reset+'email'"
                 v-model="email"
                 :rules="emailRule"
-                label="Email"
+                :label="$t('common.email')"
                 type="email"
                 color="cyan"
                 filled
@@ -37,7 +37,7 @@
               <v-text-field
                 :key="reset+'pswrd'"
                 v-model="password"
-                label="Password"
+                :label="$t('common.password')"
                 :rules="passwordRule"
                 color="cyan"
                 :type="showPassword ? 'text' : 'password'"
@@ -51,7 +51,7 @@
                 v-model="cnfrmpassword"
                 :type="showCnfrmPassword ? 'text' : 'password'"
                 :rules="cnfrmpasswordRule"
-                label="Confirm Password"
+                :label="$t('common.confirm.password')"
                 color="cyan"
                 filled
                 dense
@@ -64,7 +64,7 @@
                     filled
                     dense
                     color="cyan"
-                    label="Country Code"
+                    :label="$t('common.country.code')"
                     :items="item1"
                     :key="reset+'countrycode'"
                     v-model="countryCode"
@@ -80,7 +80,7 @@
                     hide-spin-buttons
                     :disabled="!countryCode"
                     color="cyan"
-                    label="Mobile Number"
+                    :label="$t('common.mobile.number')"
                     :key="reset+'mob'"
                     v-model="mobnumber"
                     :rules="mobnumberRule"
@@ -91,7 +91,7 @@
                 filled
                 dense
                 color="cyan"
-                label="Country"
+                :label="$t('common.country')"
                 :items="item2"
                 :key="reset+'country'"
                 v-model="country"
@@ -110,7 +110,7 @@
                 "
                 color="error"
                 class="white--text"
-                >Clear All</v-btn
+                >{{$t('common.clear.all')}}</v-btn
               >
               <v-snackbar
                 transition="scale-transition"
@@ -127,7 +127,7 @@
                 </div>
                 <template v-slot:action="{ on }">
                   <v-btn color="success" text v-on="on" @click="snackbar = false">
-                    Close
+                    {{$t('common.close')}}
                   </v-btn>
                 </template>
               </v-snackbar>
@@ -146,7 +146,7 @@
                 </div>
                 <template v-slot:action="{ on }">
                   <v-btn color="error" text v-on="on" @click="snackbar1 = false">
-                    Close
+                    {{$t('common.close')}}
                   </v-btn>
                 </template>
               </v-snackbar>
@@ -157,7 +157,7 @@
                 "
                 color="primary"
                 class="ml-2"
-                >Sign Up!</v-btn
+                >{{ $t('common.sign.up') + '!' }}</v-btn
               >
             </v-row>
           </v-card-actions>
@@ -173,7 +173,7 @@ export default {
   props: {
     companyName: {
       type: String,
-      default: "Company Name",
+      default: () => {this.$t("common.company.name")},
     },
   },
   data() {
@@ -185,32 +185,32 @@ export default {
       reset: 0,
       email: "",
       name: "",
-      nameRule: [(v) => !!v || "User Name is required"],
+      nameRule: [(v) => !!v || this.$t("common.required.user.name")],
       emailRule: [
-        (v) => !!v || "Email is required",
+        (v) => !!v || this.$t("common.required.email"),
         (v) =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-          "E-mail must be valid",
+          this.$t("common.email.valid"),
       ],
       showPassword: false,
       passwordRule: [
-        (v) => !!v || "Password is required",
+        (v) => !!v || this.$t("common.required.password"),
         (v) =>
           (v && v.length <= 15 && v.length >= 8) ||
-          "Password must be between 8 to 15 characters",
+          this.$t("common.password.length"),
       ],
       showCnfrmPassword: false,
       cnfrmpasswordRule: [
-        (v) => !!v || "Confirm Password is required",
+        (v) => !!v || this.$t("common.required.confirm.password"),
         (v) =>
           (v && v.length <= 15 && v.length >= 8) ||
-          "Password must be between 8 to 15 characters",
+          this.$t("common.password.length"),
       ],
-      countryRule: [(v) => !!v || "Country is required"],
+      countryRule: [(v) => !!v || this.$t("common.required.country")],
       mobnumberRule: [
-        (v) => !!v || "Mobile Number is required",
+        (v) => !!v || this.$t("common.required.mobile.number"),
         (v) =>
-          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) || "Mobile Number must be valid",
+          /^(\+\d{1,3}[- ]?)?\d{10}$/.test(v) || this.$t("common.mobile.number.valid"),
       ],
       password: "",
       cnfrmpassword: "",
@@ -219,8 +219,8 @@ export default {
       countryCode: "",
       snackbar: false,
       snackbar1: false,
-      text: "Sign Up Successful!!!",
-      text1: "Password and Confirm Password doesn't match",
+      text: this.$t("common.sign-up.success"),
+      text1: this.$t("common.password.confirm.password.valid"),
     };
   },
   mounted() {
