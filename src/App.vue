@@ -12,9 +12,14 @@ export default {
   components: {
   },
   mounted() {
-    if (this.$route.path !== '/sign-up') {
-  this.$router.push('/sign-up');
-    }
+    if (this.$route.path.includes('/quick-tickets/signup'))
+      this.$router.push('/quick-tickets/signup');
+    else if(this.$route.path.includes('/quick-tickets/landing'))
+      this.$router.push('/quick-tickets/landing');
+    else if(this.$route.path.includes('/quick-tickets/signin'))
+      this.$router.push('/quick-tickets/signin');
+    else
+      this.$router.push('/quick-tickets/startup')
   },
 
   data: () => ({

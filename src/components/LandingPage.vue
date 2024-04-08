@@ -33,14 +33,4 @@
     },
   };
   </script>
-  <style scoped>
-  .bground {
-    background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    background-size: cover;
-    min-height: calc(100vh - 16px);
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-  }
-  </style>
-  
+  <style scoped src="./QuickTicketsPage.css"></style>

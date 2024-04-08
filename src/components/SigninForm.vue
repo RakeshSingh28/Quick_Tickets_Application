@@ -9,7 +9,7 @@
       <v-row class="d-flex justify-space-around">
         <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" class="dialog-height">
           <v-row class="pt-6 d-flex justify-space-around">
-            <h4>{{$t('common.create.account')}}</h4>
+            <h4>{{$t('common.log.in')}}</h4>
           </v-row>
           <div class="border-col">
             <v-col cols="12" class="pb-0">
