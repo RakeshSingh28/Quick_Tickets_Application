@@ -18,7 +18,7 @@
     props: {
       companyName: {
         type: String,
-        default: "Company Name",
+        default: () => {this.$t("common.company.name")},
       },
     },
     data() {
