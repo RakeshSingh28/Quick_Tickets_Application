@@ -1,4 +1,4 @@
-# signup-form
+# quick-tickets
 
 ## Project setup
 ```
