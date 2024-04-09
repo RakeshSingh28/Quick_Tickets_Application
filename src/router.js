@@ -11,7 +11,7 @@ const routes = [
   { path: '/quick-tickets/startup', component: StartupPage},
   { path: '/quick-tickets/signup', component: SignupForm, props: {companyName:"Quick Tickets"} },
   { path: '/quick-tickets/signin', component: SigninForm, props: {companyName:"Quick Tickets"} },
-  { path: '/quick-tickets/landing', component: LandingPage, props: {companyName:"Quick TIckets"} },
+  { path: '/quick-tickets/landing', component: LandingPage, props: {companyName:"Quick Tickets"} },
 ];
 
 const router = new VueRouter({

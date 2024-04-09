@@ -17,10 +17,11 @@
     "common.required.email": "Email is required",
     "common.password.confirm.password.valid": "Password and Confirm Password doesn't match",
     "common.sign-up.success": "Sign Up Successful!!!",
+    "common.sign-in.success": "Signed In Successfully!!!",
     "common.mobile.number.valid": "Mobile Number must be valid",
     "common.required.mobile.number": "Mobile Number is required",
     "common.required.country": "Country is required",
     "common.company.name": "Company Name",
     "common.create.account": "Create an Account",
-    "common.log.in": "Log In"
+    "common.sign.in": "Sign In"
   }

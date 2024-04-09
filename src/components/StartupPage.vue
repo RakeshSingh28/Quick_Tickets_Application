@@ -2,16 +2,16 @@
   <div>
     <header>
         <div class="d-flex startup__title">
-        <img src="@/assets/quick-tickets.png" width="40" height="40" alt="Quick Tickets"> 
+        <img src="@/assets/quick-tickets.png" width="40" height="40" alt="Quick Tickets">
       <div class="logo">Quick Tickets</div>
         </div>
       <nav>
         <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">PRODUCTS</a></li>
-          <li><a href="#">SERVICE</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a>HOME</a></li>
+          <li><a>ABOUT</a></li>
+          <li><a>PRODUCTS</a></li>
+          <li><a>SERVICE</a></li>
+          <li><a>CONTACT</a></li>
           <li><a href="#/quick-tickets/signup">Sign up</a></li>
           <li><a href="#/quick-tickets/signin">Sign in</a></li>
         </ul>
@@ -21,26 +21,33 @@
     <main>
       <section class="hero">
         <div class="hero-text">
-          <h1>Book Your Tickets</h1>
+          <h1>Book Your Flight Tickets</h1>
           <p>Embark on unforgettable journeys. Seamlessly secure your travel arrangements with our intuitive platform.</p>
-          <a href="#">GET STARTED →</a>
+          <a>GET STARTED →</a>
         </div>
-        <div class="hero-image">
-          <img src="[Imagen of Phone with airplane icon]" alt="Phone with airplane icon">
-        </div>
+        <v-carousel
+        :continuous="true"
+        :cycle="true">
+            <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+            reverse-transition="scroll-x-transition"
+            transition="scroll-x-transition"
+            ></v-carousel-item>
+        </v-carousel>
       </section>
 
       <section class="booking">
         <h2>BOOK NOW</h2>
         <div class="boarding-pass">
           <div class="company-name">Quick Tickets</div>
-          <barcode></barcode>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2024 Quick Tickets</p>
+      <div>© 2024 Quick Tickets</div>
     </footer>
   </div>
 </template>
@@ -48,6 +55,22 @@
 <script>
 export default {
   name: 'StartupPage',
+  data: () => ({
+      items: [
+          {
+            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png',
+          },
+          {
+            src: 'https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg',
+          },
+          {
+            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png',
+          },
+          {
+            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png',
+          },
+        ],
+  }),
 };
 </script>
 
@@ -119,13 +142,9 @@ main {
   margin-bottom: 10px;
 }
 
-.hero-image {
-  width: 400px;
-}
-
 .booking {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 179px;
 }
 
 .booking h2 {
@@ -150,7 +169,6 @@ main {
 
 footer {
   background-color: #f1f1f1;
-  padding: 10px;
   text-align: center;
 }
 </style>

@@ -1,8 +1,11 @@
 <template>
-  <v-container fluid grid-list-md class="pa-0 pt-2">
-    <v-card width="100vw" color="black" class="mt-1 z-index-1">
+  <v-container fluid grid-list-md class="pa-0">
+    <v-card width="100vw" height="80px" class="signup__top-bar d-flex align-center" elevation="0">
       <v-row class="d-flex justify-space-around">
-        <h3 class="white--text">{{ companyName }}</h3>
+        <div class="d-flex justify-space-around startup__title">
+        <img src="@/assets/quick-tickets.png" width="40" height="40" alt="Quick Tickets">
+        <h3 class="black--text logo">{{ companyName }}</h3>
+        </div>
       </v-row>
     </v-card>
     <div class="bground">
