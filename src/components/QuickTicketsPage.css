@@ -24,6 +24,7 @@
   .dialog-height {
     min-width: 232px !important;
     max-width: 494px !important;
+    border: 1px solid #d2d9df;
   }
   
   .border-col {

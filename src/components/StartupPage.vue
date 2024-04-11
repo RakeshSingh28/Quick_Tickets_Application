@@ -1,19 +1,14 @@
 <template>
-  <div>
+  <div class="startup__area">
     <header>
-        <div class="d-flex startup__title">
+      <div class="logo-container">
         <img src="@/assets/quick-tickets.png" width="40" height="40" alt="Quick Tickets">
-      <div class="logo">Quick Tickets</div>
-        </div>
+        <div class="logo">Quick Tickets</div>
+      </div>
       <nav>
         <ul>
-          <li><a>HOME</a></li>
-          <li><a>ABOUT</a></li>
-          <li><a>PRODUCTS</a></li>
-          <li><a>SERVICE</a></li>
-          <li><a>CONTACT</a></li>
-          <li><a href="#/quick-tickets/signup">Sign up</a></li>
-          <li><a href="#/quick-tickets/signin">Sign in</a></li>
+          <li><a class="btn" href="#/quick-tickets/signin">Sign in</a></li>
+          <li><a class="btn startup__signup--btn" href="#/quick-tickets/signup">Sign up</a></li>
         </ul>
       </nav>
     </header>
@@ -23,31 +18,18 @@
         <div class="hero-text">
           <h1>Book Your Flight Tickets</h1>
           <p>Embark on unforgettable journeys. Seamlessly secure your travel arrangements with our intuitive platform.</p>
-          <a>GET STARTED →</a>
+          <a class="btn hero-btn">GET STARTED →</a>
         </div>
-        <v-carousel
-        :continuous="true"
-        :cycle="true">
-            <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-            reverse-transition="scroll-x-transition"
-            transition="scroll-x-transition"
-            ></v-carousel-item>
-        </v-carousel>
-      </section>
-
-      <section class="booking">
-        <h2>BOOK NOW</h2>
-        <div class="boarding-pass">
-          <div class="company-name">Quick Tickets</div>
+        <div class="carousel-container">
+          <v-carousel :continuous="true" :cycle="true" hide-delimiters show-arrows-on-hover>
+            <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+          </v-carousel>
         </div>
       </section>
     </main>
 
     <footer>
-      <div>© 2024 Quick Tickets</div>
+      <div>© 2024 Quick Tickets. All Rights Reserved.</div>
     </footer>
   </div>
 </template>
@@ -57,18 +39,10 @@ export default {
   name: 'StartupPage',
   data: () => ({
       items: [
-          {
-            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png',
-          },
-          {
-            src: 'https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg',
-          },
-          {
-            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png',
-          },
-          {
-            src: 'https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png',
-          },
+          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png'},
+          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg'},
+          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png'},
+          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png'},
         ],
   }),
 };
@@ -76,9 +50,10 @@ export default {
 
 <style scoped>
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f7f7f7;
 }
 
 .container {
@@ -88,22 +63,22 @@ body {
 }
 
 header {
-  background-color: #f1f1f1;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   font-size: 20px;
   font-weight: bold;
-}
-
-.startup__title{
-    width: 200px;
-    align-items: center;
-    justify-content: space-around;
+  margin-left: 10px;
+  color: #fff;
 }
 
 nav ul {
@@ -119,18 +94,24 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007bff;
 }
 
 main {
-  flex: 1;
   padding: 20px;
+  margin-bottom: 221px;
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .hero-text {
@@ -140,35 +121,49 @@ main {
 .hero-text h1 {
   font-size: 36px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
-.booking {
-  text-align: center;
-  margin-top: 179px;
+.hero-text p {
+  color: #fff;
+  line-height: 1.5;
 }
 
-.booking h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.boarding-pass {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border: 1px solid #ddd;
+.hero-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.company-name {
-  font-weight: bold;
+.hero-btn:hover {
+  background-color: #0056b3;
+}
+
+.startup__signup--btn {
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.carousel-container {
+  width: 50%;
 }
 
 footer {
-  background-color: #f1f1f1;
+  color: #fff;
   text-align: center;
+  padding: 20px 0;
+}
+
+.startup__area {
+  background-image: url("https://w.forfun.com/fetch/05/058d30394bb54b92f46beed212779e91.jpeg");
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
 }
 </style>
