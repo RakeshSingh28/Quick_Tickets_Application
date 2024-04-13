@@ -104,14 +104,13 @@ nav a:hover {
 
 main {
   padding: 20px;
-  margin-bottom: 221px;
+  min-height: calc(100vh - 144px);
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 }
 
 .hero-text {
