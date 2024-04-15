@@ -10,6 +10,10 @@
     </v-card>
     <div class="bground">
       <v-row class="d-flex justify-space-around">
+        <v-col cols="12" class="d-flex justify-center pa-0">
+        <h4>Already have an Account? <a href="#/quick-tickets/signin" class="text-decoration-none">Sign in</a></h4>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-center">
         <v-card outlined :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" class="dialog-height">
           <v-row class="pt-6 d-flex justify-space-around">
             <h4>{{$t('common.create.account')}}</h4>
@@ -101,6 +105,7 @@
                 :rules="countryRule"
                 @change="onCountryChange"
               ></v-autocomplete>
+              <p class="quick-tickets--policy">By continuing, you agree to Quick Ticket’s <a class="quick-tickets-a--policy text-decoration-none">Terms of Use</a> and <a class="quick-tickets-a--policy text-decoration-none">Privacy Policy</a>.</p>
             </v-col>
           </div>
           <v-card-actions class="btn-pos">
@@ -165,6 +170,7 @@
             </v-row>
           </v-card-actions>
         </v-card>
+        </v-col>
       </v-row>
     </div>
   </v-container>

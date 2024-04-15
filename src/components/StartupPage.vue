@@ -18,7 +18,7 @@
         <div class="hero-text">
           <h1>Book Your Flight Tickets</h1>
           <p>Embark on unforgettable journeys. Seamlessly secure your travel arrangements with our intuitive platform.</p>
-          <a class="btn hero-btn">GET STARTED →</a>
+          <a class="btn hero-btn" href="#/quick-tickets/signup">GET STARTED →</a>
         </div>
         <div class="carousel-container">
           <v-carousel :continuous="true" :cycle="true" hide-delimiters show-arrows-on-hover>

@@ -50,8 +50,18 @@
     font-weight: bold;
   }
 
-.startup__title{
+.startup__title {
     width: 200px;
     align-items: center;
     justify-content: space-around;
+}
+
+.quick-tickets--policy {
+  text-align: center;
+  color: #9c9c9c;
+}
+
+.quick-tickets-a--policy {
+  font-weight: 600;
+  color: #8a8989e6;
 }

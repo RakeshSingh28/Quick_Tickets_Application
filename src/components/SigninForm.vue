@@ -10,6 +10,10 @@
     </v-card>
     <div class="bground">
       <v-row class="d-flex justify-space-around">
+        <v-col cols="12" class="d-flex justify-center pa-0">
+        <h4>Don't you have an Account? <a href="#/quick-tickets/signup" class="text-decoration-none">Sign up</a></h4>
+        </v-col>
+        <v-col cols="12" class="d-flex justify-center">
         <v-card width="100vw" :elevation="elevate ? 20 : 0" @mouseover="elevate=true" @mouseleave="elevate=false" class="dialog-height">
           <v-row class="pt-6 d-flex justify-space-around">
             <h4>{{$t('common.sign.in')}}</h4>
@@ -110,6 +114,7 @@
             </v-row>
           </v-card-actions>
         </v-card>
+        </v-col>
       </v-row>
     </div>
   </v-container>
