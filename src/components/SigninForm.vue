@@ -92,7 +92,7 @@
               </v-col>
             </div>
             <v-card-actions class="btn-pos">
-              <v-row class="align d-flex align-center">
+              <v-row class="mr-0 d-flex align-center">
                 <v-spacer />
                 <v-btn
                   @click="clearAll"
