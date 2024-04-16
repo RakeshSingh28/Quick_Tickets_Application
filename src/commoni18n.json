@@ -26,12 +26,12 @@
   "common.sign.in": "Sign in",
   "common.account.exist": "Already have an Account?",
   "common.account.not.exist": "Don't you have an Account?",
-  "common.company.agreement": "By continuing, you agree to Quick Ticket’s",
+  "common.company.agreement": "By continuing, you agree to Quick Ticket's",
   "common.terms.of.use": "Terms of Use",
   "common.privacy.policy": "Privacy Policy",
   "common.quick.tickets": "Quick Tickets",
   "common.target.phrase": "Book Your Flight Tickets",
   "common.target.phrase.description": "Embark on unforgettable journeys. Seamlessly secure your travel arrangements with our intuitive platform.",
   "common.get.started": "GET STARTED",
-  "common.rights.assurance": "© 2024 Quick Tickets. All Rights Reserved."
+  "common.rights.assurance": "© {currentYear} Quick Tickets. All Rights Reserved."
 }

@@ -53,7 +53,13 @@
     </main>
 
     <footer>
-      <div>{{ $t("common.rights.assurance") }}</div>
+      <div>
+        {{
+          $t("common.rights.assurance", {
+            currentYear: new Date().getFullYear(),
+          })
+        }}
+      </div>
     </footer>
   </div>
 </template>
