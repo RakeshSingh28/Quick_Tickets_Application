@@ -1,59 +1,66 @@
 .bground {
-    background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    background-size: cover;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .align {
-    margin-right: 0%;
-  }
-  
-  .snackbar-style {
-    position: relative;
-    display: block;
-    left: 26px;
-    bottom: 1px;
-    margin-top: -18px;
-    padding-left: 4px;
-    margin-right: 16px;
-  }
-  
-  .dialog-height {
-    min-width: 232px !important;
-    max-width: 494px !important;
-    border: 1px solid #d2d9df;
-  }
-  
-  .border-col {
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
-    margin-top: 20px;
-  }
-  
-  .btn-pos {
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-right: 10px;
-  }
-  
-  .signup__top-bar {
-    z-index: 1;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #d2d9df;
-  }
+  background-image: url("https://images.unsplash.com/photo-1454372182658-c712e4c5a1db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-  }
+.align {
+  margin-right: 0%;
+}
+
+.snackbar-style {
+  position: relative;
+  display: block;
+  left: 26px;
+  bottom: 1px;
+  margin-top: -18px;
+  padding-left: 4px;
+  margin-right: 16px;
+}
+
+.dialog-height {
+  min-width: 232px !important;
+  max-width: 494px !important;
+  border: 1px solid #d2d9df;
+}
+
+.dialog-height:hover {
+  min-width: 232px !important;
+  max-width: 494px !important;
+  border: 1px solid #d2d9df;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.border-col {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  margin-top: 20px;
+}
+
+.btn-pos {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 10px;
+}
+
+.signup__top-bar {
+  z-index: 1;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #d2d9df;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .startup__title {
-    width: 200px;
-    align-items: center;
-    justify-content: space-around;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .quick-tickets--policy {
@@ -64,4 +71,8 @@
 .quick-tickets-a--policy {
   font-weight: 600;
   color: #8a8989e6;
+}
+
+.capitalize-text {
+  text-transform: capitalize;
 }

@@ -2,13 +2,26 @@
   <div class="startup__area">
     <header>
       <div class="logo-container">
-        <img src="@/assets/quick-tickets.png" width="40" height="40" alt="Quick Tickets">
-        <div class="logo">Quick Tickets</div>
+        <img
+          src="@/assets/quick-tickets.png"
+          width="40"
+          height="40"
+          alt="Quick Tickets"
+        />
+        <div class="logo">{{ $t("common.quick.tickets") }}</div>
       </div>
       <nav>
         <ul>
-          <li><a class="btn" href="#/quick-tickets/signin">Sign in</a></li>
-          <li><a class="btn startup__signup--btn" href="#/quick-tickets/signup">Sign up</a></li>
+          <li>
+            <a class="btn" href="#/quick-tickets/signin">{{
+              $t("common.sign.in")
+            }}</a>
+          </li>
+          <li>
+            <a class="btn startup__signup--btn" href="#/quick-tickets/signup">{{
+              $t("common.sign.up")
+            }}</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -16,41 +29,60 @@
     <main>
       <section class="hero">
         <div class="hero-text">
-          <h1>Book Your Flight Tickets</h1>
-          <p>Embark on unforgettable journeys. Seamlessly secure your travel arrangements with our intuitive platform.</p>
-          <a class="btn hero-btn" href="#/quick-tickets/signup">GET STARTED →</a>
+          <h1>{{ $t("common.target.phrase") }}</h1>
+          <p>{{ $t("common.target.phrase.description") }}</p>
+          <a class="btn hero-btn" href="#/quick-tickets/signup"
+            >{{ $t("common.get.started") }} →</a
+          >
         </div>
         <div class="carousel-container">
-          <v-carousel :continuous="true" :cycle="true" hide-delimiters show-arrows-on-hover>
-            <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+          <v-carousel
+            :continuous="true"
+            :cycle="true"
+            hide-delimiters
+            show-arrows-on-hover
+          >
+            <v-carousel-item
+              v-for="(item, i) in items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
           </v-carousel>
         </div>
       </section>
     </main>
 
     <footer>
-      <div>© 2024 Quick Tickets. All Rights Reserved.</div>
+      <div>{{ $t("common.rights.assurance") }}</div>
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'StartupPage',
+  name: "StartupPage",
   data: () => ({
-      items: [
-          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png'},
-          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg'},
-          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png'},
-          {src: 'https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png'},
-        ],
+    items: [
+      {
+        src: "https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png",
+      },
+      {
+        src: "https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg",
+      },
+      {
+        src: "https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png",
+      },
+      {
+        src: "https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png",
+      },
+    ],
   }),
 };
 </script>
 
 <style scoped>
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
