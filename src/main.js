@@ -3,6 +3,7 @@ import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import router from "./router";
 import i18n from "./i18n.js";
+import "../public/css/style.css";
 
 Vue.config.productionTip = false;
 
