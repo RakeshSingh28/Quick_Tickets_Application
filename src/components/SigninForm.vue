@@ -216,7 +216,7 @@ export default {
         this.email = this.password = this.mobnumber = "";
         this.reset++;
         this.$router.push("/quick-tickets/landing");
-      }, 500);
+      }, 1000);
     },
   },
 };

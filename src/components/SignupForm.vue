@@ -69,6 +69,7 @@
                     password ? (showPassword ? 'mdi-eye-off' : 'mdi-eye') : ''
                   "
                   @click:append="showPassword = !showPassword"
+                  @input="snackbar = false"
                 ></v-text-field>
                 <v-text-field
                   :key="reset + 'cnfrmpswrd'"
@@ -87,6 +88,7 @@
                       : ''
                   "
                   @click:append="showCnfrmPassword = !showCnfrmPassword"
+                  @input="snackbar = false"
                 ></v-text-field>
                 <v-row>
                   <v-col cols="5">
@@ -160,40 +162,25 @@
                     <v-img
                       width="20"
                       height="20"
+                      v-if="password === cnfrmpassword"
                       src="../assets/success.svg"
                     ></v-img>
-                    <span class="snackbar-style">{{ text }}</span>
-                  </div>
-                  <template v-slot:action="{ on }">
-                    <v-btn
-                      color="success"
-                      text
-                      v-on="on"
-                      @click="snackbar = false"
-                    >
-                      {{ $t("common.close") }}
-                    </v-btn>
-                  </template>
-                </v-snackbar>
-                <v-snackbar
-                  transition="scale-transition"
-                  right
-                  v-model="snackbar1"
-                >
-                  <div>
                     <v-img
                       width="20"
                       height="20"
-                      src="../assets/Error.svg"
+                      v-else
+                      src="../assets/error.svg"
                     ></v-img>
-                    <span class="snackbar-style">{{ text1 }}</span>
+                    <span class="snackbar-style">{{
+                      password === cnfrmpassword ? text : text1
+                    }}</span>
                   </div>
                   <template v-slot:action="{ on }">
                     <v-btn
-                      color="error"
+                      :color="password === cnfrmpassword ? 'success' : 'error'"
                       text
                       v-on="on"
-                      @click="snackbar1 = false"
+                      @click="snackbar = false"
                     >
                       {{ $t("common.close") }}
                     </v-btn>
@@ -268,7 +255,6 @@ export default {
       country: "",
       countryCode: "",
       snackbar: false,
-      snackbar1: false,
       text: this.$t("common.sign-up.success"),
       text1: this.$t("common.password.confirm.password.valid"),
     };
@@ -340,8 +326,8 @@ export default {
       this.reset++;
     },
     signUp() {
+      this.snackbar = true;
       if (this.password === this.cnfrmpassword) {
-        this.snackbar = true;
         setTimeout(() => {
           this.name =
             this.email =
@@ -353,8 +339,8 @@ export default {
               "";
           this.reset++;
           this.$router.push("/quick-tickets/landing");
-        }, 500);
-      } else this.snackbar1 = true;
+        }, 1000);
+      }
     },
   },
 };

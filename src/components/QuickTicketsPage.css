@@ -5,6 +5,7 @@
   display: flex;
   align-content: center;
   flex-wrap: wrap;
+  padding-top: 24px;
 }
 
 .snackbar-style {
