@@ -1,11 +1,10 @@
 .bground {
   background-image: url("https://wallpapers.com/images/hd/beach-sunset-hd-0fsttx9l0r5yq8wp.jpg");
   background-size: cover;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh);
   display: flex;
   align-content: center;
   flex-wrap: wrap;
-  padding-top: 24px;
 }
 
 .snackbar-style {
@@ -24,12 +23,6 @@
   border: 1px solid #d2d9df;
 }
 
-.dialog-height:hover {
-  min-width: 232px !important;
-  max-width: 494px !important;
-  border: 1px solid #d2d9df;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .border-col {
   border-bottom: 1px solid gray;
@@ -43,11 +36,6 @@
   padding-right: 10px;
 }
 
-.signup__top-bar {
-  z-index: 1;
-  background-color: #f1f1f1;
-  border-bottom: 1px solid #d2d9df;
-}
 
 .logo {
   font-size: 20px;
@@ -72,4 +60,10 @@
 
 .capitalize-text {
   text-transform: capitalize;
+}
+
+.signup-form--height {
+  --vue-scroll-area-height: calc(100vh);
+  max-height: var(--vue-scroll-area-height);
+  min-height: var(--vue-scroll-area-height);
 }

@@ -1,9 +1,15 @@
 <template>
   <v-container fluid grid-list-md class="pa-0">
+     <v-row no-gutters>
+    <v-col cols="8" class="pa-0 ma-0">
+      <div class="bground"></div>
+    </v-col>
+    <v-col cols="4" class="align-content-center" style="min-width: 400px">
+      <VuePerfectScrollbar class="signup-form--height" :settings="{ suppressScrollX: true }">
     <v-card
       width="100vw"
       height="80px"
-      class="signup__top-bar d-flex align-center"
+      class="d-flex align-center"
       elevation="0"
     >
       <v-row class="d-flex justify-space-around">
@@ -18,8 +24,8 @@
         </div>
       </v-row>
     </v-card>
-    <div class="bground">
-      <v-row class="d-flex justify-space-around">
+    <div>
+      <v-row class="d-flex justify-space-around pt-5">
         <v-col cols="12" class="d-flex justify-center pa-0">
           <h4>
             {{ $t("common.account.exist") }}
@@ -29,7 +35,7 @@
           </h4>
         </v-col>
         <v-col cols="12" class="d-flex justify-center">
-          <v-card outlined class="dialog-height">
+          <v-card outlined class="dialog-height" elevation="0">
             <v-row class="pt-6 d-flex justify-space-around">
               <h4>{{ $t("common.create.account") }}</h4>
             </v-row>
@@ -199,12 +205,19 @@
         </v-col>
       </v-row>
     </div>
+    </VuePerfectScrollbar>
+    </v-col>
+    </v-row>
   </v-container>
 </template>
 <script>
 import axios from "axios";
+import VuePerfectScrollbar from "vue-perfect-scrollbar";
 export default {
   name: "SignupForm",
+  components: {
+    VuePerfectScrollbar,
+  },
   props: {
     companyName: {
       type: String,

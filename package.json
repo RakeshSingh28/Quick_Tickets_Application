@@ -14,7 +14,8 @@
     "vue": "^2.7.10",
     "vue-i18n": "^8.28.2",
     "vue-router": "^3.5.2",
-    "vuetify": "^2.6.0"
+    "vuetify": "^2.6.0",
+    "vue-perfect-scrollbar": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
