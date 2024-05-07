@@ -70,16 +70,16 @@ export default {
   data: () => ({
     items: [
       {
-        src: "https://png.pngtree.com/thumb_back/fh260/background/20231002/pngtree-d-rendering-of-yellow-airplane-and-search-bar-for-easy-tourism-image_13563282.png",
+        src: "https://wallpapers.com/images/featured/4k-plane-background-nyp57gekd7c1l5ri.jpg",
       },
       {
-        src: "https://png.pngtree.com/thumb_back/fh260/background/20230717/pngtree-online-booking-travel-essentials-mobile-phone-suitcase-boarding-pass-and-airplane-image_3897736.jpg",
+        src: "https://wallpapers.com/images/hd/sunset-silhouette-airplane-brh2gmlmjhnj74dv.jpg",
       },
       {
-        src: "https://png.pngtree.com/thumb_back/fh260/background/20231003/pngtree-convenient-online-airline-ticket-booking-with-search-bar-and-vibrant-yellow-image_13566143.png",
+        src: "https://getwallpapers.com/wallpaper/full/e/a/c/1454928-beautiful-airplane-wallpaper-1920x1200.jpg",
       },
       {
-        src: "https://png.pngtree.com/thumb_back/fh260/background/20231001/pngtree-online-tourism-and-travel-booking-find-airline-tickets-with-convenient-search-image_13566141.png",
+        src: "https://uhdwallpapers.org/download/delta-aircraft-on-jfk-airport_96974/1920x1080/",
       },
     ],
   }),
@@ -198,7 +198,7 @@ footer {
 }
 
 .startup__area {
-  background-image: url("https://w.forfun.com/fetch/05/058d30394bb54b92f46beed212779e91.jpeg");
+  background-image: url("https://mrwallpaper.com/images/hd/gradient-cloudy-sky-4k-pc-3egacfral9yz8znc.jpg");
   background-repeat: repeat;
   background-size: cover;
   position: relative;
