@@ -1,10 +1,10 @@
 <template>
   <v-container fluid grid-list-md class="pa-0">
     <v-row no-gutters>
-    <v-col cols="8" class="pa-0 ma-0">
-      <div class="bground"></div>
+    <v-col md="8" sm="6" class="pa-0 ma-0">
+      <div class="signin-bground"></div>
     </v-col>
-    <v-col cols="4" class="align-content-center">
+    <v-col md="4" sm="6" class="align-content-center">
     <v-card
       width="100vw"
       height="80px"

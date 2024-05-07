@@ -1,7 +1,25 @@
-.bground {
+.signup-bground {
   background-image: url("https://wallpapers.com/images/hd/beach-sunset-hd-0fsttx9l0r5yq8wp.jpg");
   background-size: cover;
   min-height: calc(100vh);
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.signin-bground {
+  background-image: url("https://wallpapers.com/images/hd/beach-sunset-hd-pbw8evzrrekzddkt.jpg");
+  background-size: cover;
+  min-height: calc(100vh);
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-bground {
+  background-image: url("https://wallpapercave.com/wp/wp4100964.jpg");
+  background-size: cover;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-content: center;
   flex-wrap: wrap;
@@ -66,4 +84,8 @@
   --vue-scroll-area-height: calc(100vh);
   max-height: var(--vue-scroll-area-height);
   min-height: var(--vue-scroll-area-height);
+}
+
+.col {
+  flex-basis: auto;
 }

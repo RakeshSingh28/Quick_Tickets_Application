@@ -3,7 +3,7 @@
     <v-card
       width="100vw"
       height="80px"
-      class="signup__top-bar d-flex align-center"
+      class="d-flex align-center"
       elevation="0"
     >
       <v-row class="d-flex justify-space-around">
@@ -18,7 +18,7 @@
         </div>
       </v-row>
     </v-card>
-    <div class="bground">
+    <div class="landing-bground">
       <v-row class="d-flex justify-space-around"> </v-row>
     </div>
   </v-container>
