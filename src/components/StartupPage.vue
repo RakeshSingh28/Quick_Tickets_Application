@@ -198,7 +198,7 @@ footer {
 }
 
 .startup__area {
-  background-image: url("https://mrwallpaper.com/images/hd/gradient-cloudy-sky-4k-pc-3egacfral9yz8znc.jpg");
+  background-image: url("https://wallpapers.com/images/hd/beach-sunset-hd-pbw8evzrrekzddkt.jpg");
   background-repeat: repeat;
   background-size: cover;
   position: relative;

@@ -8,7 +8,7 @@
 }
 
 .signin-bground {
-  background-image: url("https://wallpapers.com/images/hd/beach-sunset-hd-pbw8evzrrekzddkt.jpg");
+  background-image: url("https://wallpapers.com/images/featured/beach-sunset-bwvid0licus1pjda.jpg");
   background-size: cover;
   min-height: calc(100vh);
   display: flex;
@@ -19,7 +19,7 @@
 .landing-bground {
   background-image: url("https://wallpapercave.com/wp/wp4100964.jpg");
   background-size: cover;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 54px);
   display: flex;
   align-content: center;
   flex-wrap: wrap;

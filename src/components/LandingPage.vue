@@ -2,7 +2,7 @@
   <v-container fluid grid-list-md class="pa-0">
     <v-card
       width="100vw"
-      height="80px"
+      height="54px"
       class="d-flex align-center"
       elevation="0"
     >
