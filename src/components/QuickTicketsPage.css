@@ -84,6 +84,7 @@
   --vue-scroll-area-height: calc(100vh);
   max-height: var(--vue-scroll-area-height);
   min-height: var(--vue-scroll-area-height);
+  display: initial;
 }
 
 .col {
@@ -157,6 +158,7 @@ main {
 
 .hero-text {
   max-width: 500px;
+  min-width: 300px;
 }
 
 .hero-text h1 {

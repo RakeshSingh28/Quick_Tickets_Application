@@ -1,13 +1,13 @@
 <template>
   <v-container fluid grid-list-md class="pa-0">
      <v-row no-gutters>
-    <v-col md="8" sm="6" class="pa-0 ma-0">
+    <v-col md="7" sm="6" lg="8" xl="9" class="pa-0 ma-0">
       <div class="signup-bground"></div>
     </v-col>
-    <v-col md="4" sm="6" class="align-content-center">
+    <v-col md="5" sm="6" lg="4" xl="3" class="align-content-center">
       <VuePerfectScrollbar class="signup-form--height" :settings="{ suppressScrollX: true }">
+      <v-row class="d-flex justify-space-around pt-3">
     <v-card
-      width="100vw"
       height="80px"
       class="d-flex align-center"
       elevation="0"
@@ -24,9 +24,7 @@
         </div>
       </v-row>
     </v-card>
-    <div>
-      <v-row class="d-flex justify-space-around pt-5">
-        <v-col cols="12" class="d-flex justify-center pa-0">
+        <v-col cols="12" class="d-flex justify-center pa-0 pt-5">
           <h4>
             {{ $t("common.account.exist") }}
             <a href="#/quick-tickets/signin" class="text-decoration-none">{{
@@ -204,7 +202,6 @@
           </v-card>
         </v-col>
       </v-row>
-    </div>
     </VuePerfectScrollbar>
     </v-col>
     </v-row>
