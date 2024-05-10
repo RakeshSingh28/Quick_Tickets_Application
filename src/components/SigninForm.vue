@@ -1,12 +1,11 @@
 <template>
   <v-container fluid grid-list-md class="pa-0">
     <v-row no-gutters>
-    <v-col md="8" sm="6" class="pa-0 ma-0">
+    <v-col md="7" sm="6" lg="8" xl="9" class="pa-0 ma-0">
       <div class="signin-bground"></div>
     </v-col>
-    <v-col md="4" sm="6" class="align-content-center">
+    <v-col md="5" sm="6" lg="4" xl="3" class="align-content-center">
     <v-card
-      width="100vw"
       height="80px"
       class="d-flex align-center"
       elevation="0"
