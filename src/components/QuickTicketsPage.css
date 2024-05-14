@@ -157,7 +157,7 @@ main {
 }
 
 .hero-text {
-  max-width: 500px;
+  padding-right: 40px;
   min-width: 300px;
 }
 
