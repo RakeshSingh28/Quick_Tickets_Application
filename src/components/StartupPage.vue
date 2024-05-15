@@ -27,14 +27,15 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-text">
+      <v-row class="hero">
+        <v-col cols="6" :class="$vuetify.breakpoint.smAndDown ? 'hero-text' : ''" class="hero-style">
           <h1>{{ $t("common.target.phrase") }}</h1>
           <p>{{ $t("common.target.phrase.description") }}</p>
           <a class="btn hero-btn" href="#/quick-tickets/signup"
             >{{ $t("common.get.started") }} →</a
           >
-        </div>
+        </v-col>
+        <v-col cols="6" :class="$vuetify.breakpoint.smAndDown ? 'hero-carousel' : ''">
         <div class="carousel-container">
           <v-carousel
             :continuous="true"
@@ -49,7 +50,8 @@
             ></v-carousel-item>
           </v-carousel>
         </div>
-      </section>
+        </v-col>
+      </v-row>
     </main>
 
     <footer>
@@ -70,10 +72,10 @@ export default {
   data: () => ({
     items: [
       {
-        src: "https://wallpapers.com/images/featured/4k-plane-background-nyp57gekd7c1l5ri.jpg",
+        src: "https://wallpapers.com/images/hd/sunset-shot-of-airplane-4k-zqwx0kbvdu5xwj39.jpg",
       },
       {
-        src: "https://wallpapers.com/images/hd/sunset-silhouette-airplane-brh2gmlmjhnj74dv.jpg",
+        src: "https://m.media-amazon.com/images/I/71YMeHTzeXL.jpg",
       },
       {
         src: "https://getwallpapers.com/wallpaper/full/e/a/c/1454928-beautiful-airplane-wallpaper-1920x1200.jpg",
