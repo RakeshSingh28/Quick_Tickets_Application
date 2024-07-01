@@ -8,7 +8,7 @@ import SigninForm from "./components/SigninForm.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/quick-tickets/startup", component: StartupPage },
+  { path: "", component: StartupPage },
   {
     path: "/quick-tickets/signup",
     component: SignupForm,
@@ -20,7 +20,7 @@ const routes = [
     props: { companyName: "Quick Tickets" },
   },
   {
-    path: "/quick-tickets/landing",
+    path: "/quick-tickets/home",
     component: LandingPage,
     props: { companyName: "Quick Tickets" },
   },

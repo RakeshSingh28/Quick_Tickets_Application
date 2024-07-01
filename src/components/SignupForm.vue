@@ -348,7 +348,7 @@ export default {
             this.mobnumber =
               "";
           this.reset++;
-          this.$router.push("/quick-tickets/landing");
+          this.$router.push("/quick-tickets/home");
         }, 1000);
       }
     },
